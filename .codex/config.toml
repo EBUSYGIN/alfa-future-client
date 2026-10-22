@@ -1,3 +1,5 @@
 # Настройки Codex для этого репозитория.
 # Codex применяет файл после подтверждения доверия к проекту.
 model_reasoning_effort = "medium"
+[mcp_servers.figma]
+url = "https://mcp.figma.com/mcp"
