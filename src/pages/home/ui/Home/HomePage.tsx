@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Badge, RangeSlider } from "@shared/index";
+import { Badge, RangeSlider } from "@shared/ui";
 import "./HomePage.css";
 
 export function HomePage() {
@@ -9,25 +9,23 @@ export function HomePage() {
   };
 
   return (
-    <main className="home-page">
-      <div className="home-page__content">
-        <section className="home-page__slider" aria-label="Слайдер">
-          <RangeSlider
-            minValue={700000}
-            maxValue={1900000}
-            value={value}
-            onChange={handleChange}
-            name="Сумма кредита"
-            valueUnit="currency"
-          />
-        </section>
-        <section className="home-page__badges" aria-label="Статусы">
-          <Badge variant="info">Проверка</Badge>
-          <Badge variant="warning">Ручная проверка</Badge>
-          <Badge variant="success">Одобрена</Badge>
-          <Badge variant="error">Отказ</Badge>
-        </section>
-      </div>
-    </main>
+    <div className="home-page">
+      <section className="home-page__slider" aria-label="Слайдер">
+        <RangeSlider
+          minValue={700000}
+          maxValue={1900000}
+          value={value}
+          onChange={handleChange}
+          name="Сумма кредита"
+          valueUnit="currency"
+        />
+      </section>
+      <section className="home-page__badges" aria-label="Статусы">
+        <Badge variant="info">Проверка</Badge>
+        <Badge variant="warning">Ручная проверка</Badge>
+        <Badge variant="success">Одобрена</Badge>
+        <Badge variant="error">Отказ</Badge>
+      </section>
+    </div>
   );
 }

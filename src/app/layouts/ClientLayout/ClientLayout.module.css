@@ -1,0 +1,11 @@
+.layout { display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh; }
+.body { display: grid; flex: 1; grid-template-columns: 224px minmax(0, 1fr); }
+.main { min-width: 0; padding-block: 48px; }
+.skipLink { position: fixed; top: 8px; left: 8px; z-index: 30; padding: 12px; border-radius: 8px; background: var(--color-white); transform: translateY(-150%); }
+.skipLink:focus { transform: translateY(0); }
+
+@media (max-width: 760px) {
+  .body { display: flex; flex-direction: column; }
+  .main { flex: 1; padding-block: 24px; }
+  .main .content { padding-inline: 16px; }
+}

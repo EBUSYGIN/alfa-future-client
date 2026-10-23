@@ -14,6 +14,9 @@ import type { SelectProps } from "./Select.types";
 
 export function Select({
   className,
+  appearance = "default",
+  hideLabel = false,
+  prefix,
   label,
   options,
   placeholder = "Выберите значение",
@@ -35,8 +38,8 @@ export function Select({
   }, [defaultOpen, disabled]);
 
   return (
-    <Field className={cn(styles.field, className)}>
-      <Label className={styles.label}>{label}</Label>
+    <Field className={cn(styles.field, appearance === "compact" && styles.compact, className)}>
+      <Label className={cn(styles.label, hideLabel && styles.visuallyHidden)}>{label}</Label>
       <Listbox
         {...(value === undefined ? { defaultValue } : { value })}
         disabled={disabled}
@@ -46,13 +49,17 @@ export function Select({
         {({ value }) => (
           <div className={styles.control}>
             <ListboxButton ref={buttonRef} className={styles.button}>
-              <span>
+              {prefix && <span className={styles.prefix} aria-hidden="true">{prefix}</span>}
+              <span className={styles.value}>
                 {options.find((option) => option.value === value)?.label ??
                   placeholder}
               </span>
               <ChevronDown className={styles.icon} aria-hidden="true" />
             </ListboxButton>
-            <ListboxOptions className={styles.options}>
+            <ListboxOptions
+              anchor={appearance === "compact" ? "bottom start" : undefined}
+              className={cn(styles.options, appearance === "compact" && styles.floatingOptions)}
+            >
               {options.map((option) => (
                 <ListboxOption
                   key={option.value}

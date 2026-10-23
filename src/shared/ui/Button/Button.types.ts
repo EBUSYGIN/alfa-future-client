@@ -1,4 +1,4 @@
-import type { IconType } from "@shared/Icon/Icon";
+import type { IconType } from "../Icon/Icon";
 
 export interface IButtonProps extends React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,

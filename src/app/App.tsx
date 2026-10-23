@@ -1,5 +1,5 @@
-import { HomePage } from "../pages/home/ui";
+import { RouterProvider } from "./router";
 
 export function App() {
-  return <HomePage />;
+  return <RouterProvider />;
 }
