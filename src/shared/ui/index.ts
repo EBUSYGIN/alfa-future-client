@@ -6,3 +6,4 @@ export { RangeSlider } from "./RangeSlide/RangeSlider";
 export { Checkbox } from "./Checkbox/Checkbox";
 export { Toggle } from "./Toggle/Toggle";
 export { Badge } from "./Badge/Badge";
+export { Container } from "./Container/Container";

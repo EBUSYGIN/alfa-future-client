@@ -1,11 +1,9 @@
-.home-page { min-height: 100vh; padding: 48px 32px; }
-.home-page__content { width: min(100%, 1288px); margin: 0 auto; }
+.home-page { min-width: 0; }
 .home-page__slider { max-width: 620px; margin-bottom: 48px; }
 .home-page__badges { display: flex; flex-wrap: wrap; gap: 12px; }
 .home-page__choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .home-page__choices h2 { margin: 0 0 20px; font-size: 18px; line-height: 26px; }
 .home-page__states { display: grid; gap: 16px; }
 @media (max-width: 600px) {
-  .home-page { padding: 24px; }
   .home-page__choices { grid-template-columns: 1fr; }
 }
