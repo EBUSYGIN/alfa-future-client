@@ -1,27 +1,33 @@
-import { Button } from "@shared/index";
+import { useState } from "react";
+import { Badge, RangeSlider } from "@shared/index";
 import "./HomePage.css";
 
-const appearances = ["primary", "secondary", "ghost"] as const;
-
 export function HomePage() {
+  const [value, setValue] = useState(Math.floor(1900000 + 700000));
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(parseFloat(e.target.value));
+  };
+
   return (
     <main className="home-page">
-      <section className="home-page__content" aria-labelledby="buttons-title">
-        <h1 id="buttons-title">Кнопки</h1>
-        <div className="home-page__variants">
-          {appearances.map((appearance) => (
-            <div className="home-page__variant" key={appearance}>
-              <h2>{appearance}</h2>
-              <div className="home-page__buttons">
-                <Button appearance={appearance}>Продолжить</Button>
-                <Button appearance={appearance} isDisabled>
-                  Недоступно
-                </Button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <div className="home-page__content">
+        <section className="home-page__slider" aria-label="Слайдер">
+          <RangeSlider
+            minValue={700000}
+            maxValue={1900000}
+            value={value}
+            onChange={handleChange}
+            name="Сумма кредита"
+            valueUnit="currency"
+          />
+        </section>
+        <section className="home-page__badges" aria-label="Статусы">
+          <Badge variant="info">Проверка</Badge>
+          <Badge variant="warning">Ручная проверка</Badge>
+          <Badge variant="success">Одобрена</Badge>
+          <Badge variant="error">Отказ</Badge>
+        </section>
+      </div>
     </main>
   );
 }

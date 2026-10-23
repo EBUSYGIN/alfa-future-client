@@ -1,0 +1,9 @@
+.field { display: flex; align-items: center; gap: 10px; min-height: 24px; }
+.control { display: flex; align-items: center; flex: none; width: 40px; height: 24px; padding: 3px; border: 0; border-radius: 20px; background: #d5d7dd; cursor: pointer; }
+.control[data-checked] { background: var(--color-brand); }
+.thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--color-white); }
+.control[data-checked] .thumb { transform: translateX(16px); }
+.control:focus-visible { outline: 2px solid var(--color-text); outline-offset: 3px; }
+.control[data-disabled] { background: var(--color-disabled-background); cursor: not-allowed; }
+.label { color: var(--color-text); font-size: 13px; line-height: 19px; cursor: pointer; }
+.field[data-disabled] .label { color: var(--color-disabled-text); cursor: not-allowed; }

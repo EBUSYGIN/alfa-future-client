@@ -1,2 +1,8 @@
 export { Button } from "./Button/Button";
 export { Icon } from "./Icon/Icon";
+export { Input } from "./Input/Input";
+export { Select } from "./Select/Select";
+export { RangeSlider } from "./RangeSlide/RangeSlider";
+export { Checkbox } from "./Checkbox/Checkbox";
+export { Toggle } from "./Toggle/Toggle";
+export { Badge } from "./Badge/Badge";

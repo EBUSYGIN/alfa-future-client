@@ -8,6 +8,10 @@
   --color-success: #16764a;
   --color-warning: #996314;
   --color-info: #315da8;
+  --color-info-background: #edf3ff;
+  --color-warning-background: #fff5de;
+  --color-success-background: #eaf7ef;
+  --color-error-background: #fff0ee;
   --color-white: #ffffff;
   --color-brand-hover: #d8271c;
   --color-disabled-background: #f0f1f4;
