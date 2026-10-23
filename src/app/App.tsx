@@ -1,5 +1,5 @@
-import { HomePage } from '../pages/home'
+import { HomePage } from "../pages/home/ui";
 
 export function App() {
-  return <HomePage />
+  return <HomePage />;
 }
